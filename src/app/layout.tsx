@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import styles from "./styles.module.scss"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +16,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <div className="bg-[#2C2C2C] min-h-screen w-screen">
+          <div className="w-screen h-screen overflow-hidden fixed top-0">
+            <img src="/images/bg-1.svg" className={styles.shapeA}/>
+            <img src="/images/bg-2.svg" className={styles.shapeB}/>
+          </div>
+          <img src="/images/tags.svg" className="absolute top-[40%] left-[40%]"/>
+          {children}
+        </div>
+      </body>
     </html>
   );
 }

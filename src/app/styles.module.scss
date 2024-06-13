@@ -1,0 +1,122 @@
+.shapeA {
+    @apply h-[608px] absolute top-[-200px] right-[-200px];
+
+    animation: shapeAMove 15s ease-in-out infinite both;
+}
+
+@keyframes shapeAMove {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0);
+    }
+
+    33% {
+        transform: translateX(-200px) translateY(200px) rotate(40deg);
+    }
+
+    66% {
+        transform: translateX(100px) translateY(280px) rotate(60deg);
+    }
+
+    100% {
+        transform: translateX(0) translateY(0) rotate(0);
+    }
+}
+
+.shapeB {
+    @apply h-[736px] absolute bottom-[-100px] left-[-400px];
+
+    animation: shapeBMove 15s ease-in-out infinite both;
+}
+
+@keyframes shapeBMove {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0);
+    }
+
+    33% {
+        transform: translateX(200px) translateY(-150px) rotate(-20deg);
+    }
+
+    66% {
+        transform: translateX(50px) translateY(-200px) rotate(-40deg);
+    }
+
+    100% {
+        transform: translateX(0) translateY(0) rotate(0);
+    }
+}
+
+.text {
+    animation: textMove 0.7s ease-in-out;
+}
+
+@keyframes textMove {
+    0% {
+        transform: translateY(100px);
+        opacity: 0%;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 100%;
+    }
+}
+
+.text_sub {
+    animation: textMove 0.7s 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes textMove {
+    0% {
+        transform: translateY(100px);
+        opacity: 0%;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 100%;
+    }
+}
+
+.text_right {
+    animation: textMoveRight 0.7s 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes textMoveRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0%;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 100%;
+    }
+}
+
+.text_opacity {
+    animation: textCenter 1s 2s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes textCenter {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+.info {
+
+    flex-direction: column;
+
+    @media screen and (max-height: 862px) {
+        flex-direction: row;
+    }
+
+}

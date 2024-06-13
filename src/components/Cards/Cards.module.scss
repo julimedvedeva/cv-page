@@ -1,0 +1,33 @@
+.cards {
+
+    overflow-x: visible;
+
+    @media screen and (max-width: 1439px) {
+        overflow-x: scroll;
+        width: calc(100vw - 24px - 32px);
+    }
+
+    @media screen and (max-height: 862px) {
+        overflow-x: scroll;
+        width: calc(100vw - 412px - 32px);
+        margin-right: 0;
+        padding-right: 32px;
+    }
+
+    &::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari, and Opera */
+    }
+
+    &__follow_cursor {
+        display: block;
+        width: 128px;
+        height: 128px;
+        background: #D2854D;
+        border-radius: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        position: absolute;
+        z-index: 2;
+        pointer-events: none;
+        transition: linear all 0.07s;
+    }
+}
