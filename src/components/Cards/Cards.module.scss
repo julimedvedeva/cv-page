@@ -1,5 +1,5 @@
 .cards {
-
+    width: calc(100vw - 64px);
     overflow-x: visible;
 
     @media screen and (max-width: 1439px) {
@@ -20,6 +20,8 @@
 
     &__follow_cursor {
         display: block;
+        top: 0;
+        left: 0;
         width: 128px;
         height: 128px;
         background: #D2854D;
@@ -28,6 +30,6 @@
         position: absolute;
         z-index: 2;
         pointer-events: none;
-        transition: linear all 0.07s;
+        transition: linear all 0.1s;
     }
 }

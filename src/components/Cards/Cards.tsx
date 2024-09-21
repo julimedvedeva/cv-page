@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import classNames from "classnames";
 import Icon from "../Icon/Icon";
 import { data } from "./constants";
@@ -17,14 +17,21 @@ const Cards: React.FC<IProps> = ({}) => {
 
     const circle = useRef<HTMLDivElement>(null)
 
-    const followCursor = (e: MouseEvent) => {
+    const followCursor = useCallback((e: MouseEvent) => {
         if (!circle.current) {
             return;
         }
 
-        circle.current.style.left = (e.clientX - (circle.current.parentElement?.getBoundingClientRect().x || 0)) + 'px'
-        circle.current.style.top = (e.clientY - (circle.current.parentElement?.getBoundingClientRect().y || 0))+ 'px'
-    }
+        const rect = circle.current.parentElement?.getBoundingClientRect();
+
+        if(rect) {
+            circle.current.style.transform = `translateX(-50%) translateY(-50%) translateX(${(e.clientX - (rect.x || 0)) + 'px'}) translateY(${(e.clientY - (rect.y || 0)) + 'px'})`
+            // circle.current.style.left = (e.clientX - (rect.x || 0)) + 'px'
+            // circle.current.style.top = (e.clientY - (rect.y || 0)) + 'px'
+
+            // console.log(circle.current.style.left)
+        }
+    }, [])
 
     useEffect(() => {
         window.addEventListener('mousemove', followCursor)
@@ -32,7 +39,7 @@ const Cards: React.FC<IProps> = ({}) => {
         return(() => {
             window.removeEventListener('mousemove', followCursor)
         })
-    }, [])
+    }, [followCursor])
 
   return (
     <div className={classNames("flex gap-6", styles.cards)}>
