@@ -1,0 +1,10 @@
+.text {
+    animation: textRotation linear infinite 15s;
+}
+
+@keyframes textRotation {
+    to {
+        transform: rotate(360deg);
+    }
+    
+}
