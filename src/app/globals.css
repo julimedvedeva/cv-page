@@ -445,3 +445,8 @@ body {
 .font-halvar {
     font-family: 'Halvar Breit';
 }
+
+img {
+    pointer-events: none;
+    user-select: none;
+}

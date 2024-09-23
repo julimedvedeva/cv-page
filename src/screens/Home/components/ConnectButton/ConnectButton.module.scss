@@ -1,0 +1,59 @@
+.connect {
+    z-index: 10;
+    position: absolute;
+    bottom: 360px;
+    right: 0px;
+    transform: translateX(-50%);
+    transition: all 0.2s ease;
+
+    &__arrow {
+        position: absolute;
+        transition: all 0.2s ease;
+        top: -50px;
+        left: -200px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .connect {
+        bottom: 360px;
+        right: -5%;
+        
+        &__arrow {
+            top: -80px;
+            left: -80px;
+            rotate: 20deg;
+            width: 50%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .connect {
+        top: 480px;
+        right: 0%;
+
+        
+        &__arrow {
+            top: -80px;
+            left: -80px;
+            rotate: 20deg;
+            width: 50%;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .connect {
+        top: 270px;
+        right: -20px;
+        scale: 0.8;
+
+        &__arrow {
+            top: -80px;
+            left: -80px;
+            rotate: 20deg;
+            width: 50%;
+        }
+    }
+}

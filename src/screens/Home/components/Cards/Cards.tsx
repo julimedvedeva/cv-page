@@ -2,13 +2,16 @@
 
 import React, { useCallback, useEffect, useRef } from "react";
 import classNames from "classnames";
-import Icon from "../Icon/Icon";
+
+import Link from "next/link";
+
+import Icon from "@/components/Icon";
+import Tag from "@/components/Tag";
+
+
 import { data } from "./constants";
 
-
 import styles from './Cards.module.scss'
-import Tag from "../Tag/Tag";
-import Link from "next/link";
 
 
 interface IProps {}
@@ -50,15 +53,23 @@ const Cards: React.FC<IProps> = ({}) => {
             </div>
             <div className={styles.cards__follow_cursor} ref={circle}/>
         </div>
-        <div className="flex flex-wrap gap-4 justify-end h-[264px] min-w-[510px] rounded-[20px] px-6 py-6 border-[1px] border-[#EAEAEA] " >
-            {data.map((item, index)=>(
-                <Tag key={index}>
-                    {item}
-                </Tag>
-            ))}
+
+        <div
+            className={classNames(
+                "flex flex-wrap gap-4 justify-end h-[264px] min-w-[500px] grow-0 rounded-[20px] px-6 py-6 border-[1px] border-[#EAEAEA] overflow-hidden"
+            )}
+        >
+            <div className="contents sm:flex flex-wrap gap-4 min-w-[200%] justify-center translate-x-1/4">
+                {data.map((item, index)=>(
+                    <Tag key={index}>
+                        {item}
+                    </Tag>
+                ))}
+            </div>
         </div>
+
         <Link href='https://t.me/iamtoxa' target="_blank">
-            <div className="flex flex-col justify-between group h-[264px] min-w-[328px] bg-[#EAEAEA] rounded-[20px] py-[24px] pl-[32px] pr-[24px] cursor-pointer" >
+            <div className="flex flex-col justify-between group h-[264px] min-w-[328px] sm:min-w-0 bg-[#EAEAEA] rounded-[20px] py-[24px] pl-[32px] pr-[24px] cursor-pointer" >
                 <p className="w-[254px] font-halvar font-[400] text-[32px] leading-[37px] text-[#2D2D2D]">Связаться со мной</p>
                 <div className="flex justify-end">
                     <div className="flex items-center justify-center border-[1px] border-[#2D2D2D] w-[114px] h-[114px] rounded-full group-hover:bg-[#D2854D] cursor-pointer transition-all duration-300">

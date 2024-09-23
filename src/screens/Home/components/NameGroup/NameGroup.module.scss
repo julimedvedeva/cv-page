@@ -1,0 +1,64 @@
+.text {
+    animation: textMove 0.7s ease-in-out;
+}
+
+@keyframes textMove {
+    0% {
+        transform: translateY(100px);
+        opacity: 0%;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 100%;
+    }
+}
+
+.text_sub {
+    animation: textMove 0.7s 1.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes textMove {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0%;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 100%;
+    }
+}
+
+.text_right {
+    animation: textMoveRight 0.7s 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes textMoveRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0%;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 100%;
+    }
+}
+
+.text_opacity {
+    animation: textCenter 1s 2s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes textCenter {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}

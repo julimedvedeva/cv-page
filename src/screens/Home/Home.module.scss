@@ -1,0 +1,79 @@
+.info {
+
+    flex-direction: column;
+
+    @media screen and (max-height: 862px) {
+        flex-direction: row;
+    }
+
+}
+
+
+.connect {
+    z-index: 10;
+    position: absolute;
+    top: 25%;
+    right: 8%;
+
+    &__arrow {
+        position: absolute;
+        top: -50px;
+        left: -200px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .connect {
+        top: 480px;
+        right: 0%;
+
+        
+        &__arrow {
+            top: -80px;
+            left: -80px;
+            rotate: 20deg;
+            width: 50%;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .connect {
+        top: 270px;
+        right: -20px;
+        scale: 0.8;
+
+        &__arrow {
+            top: -80px;
+            left: -80px;
+            rotate: 20deg;
+            width: 50%;
+        }
+    }
+}
+
+.group {
+    display: contents;
+}
+
+@media screen and (max-height: 862px) {
+    .spacer {
+        display: none;
+    }
+
+    .group {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .spacer {
+        display: block;
+    }
+
+    .group {
+        display: contents;
+    }
+}

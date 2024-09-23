@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
-import styles from "./styles.module.scss"
+import ScreenBack from "@/components/ScreenBack";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,14 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="bg-[#2C2C2C] min-h-screen w-screen">
-          <div className="w-screen h-screen overflow-hidden fixed top-0">
-            <img src="/images/bg-1.svg" className={styles.shapeA}/>
-            <img src="/images/bg-2.svg" className={styles.shapeB}/>
-          </div>
-          <img src="/images/tags.svg" className="absolute top-[40%] left-[40%]"/>
-          {children}
-        </div>
+          <ScreenBack>
+            {children}
+          </ScreenBack>
       </body>
     </html>
   );
