@@ -14,7 +14,7 @@ interface IProps {}
 
 const Home: React.FC<IProps> = ({}) => {
   return (
-    <main className="relative w-full h-full flex flex-1 flex-col justify-between max-w-[1440px] px-8 py-6">
+    <main className="relative w-full h-full flex flex-1 flex-col justify-between max-w-[1440px] px-8 py-6 sm:min-h-[1080px]">
       <div>
         <img
           src="/images/tags.svg"
