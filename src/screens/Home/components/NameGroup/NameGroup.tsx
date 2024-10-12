@@ -3,10 +3,18 @@ import classnames from "classnames";
 
 import styles from "./NameGroup.module.scss";
 import { data } from "./constants";
+import { useOwnerData } from "@/queries";
+import Intl from "@/components/Intl";
 
 interface IProps {}
 
 const NameGroup: React.FC<IProps> = ({}) => {
+  const ownerDataQuery = useOwnerData();
+
+  if(!ownerDataQuery.data) {
+    return null;
+  }
+
   return (
     <div className="flex flex-col">
       <h1
@@ -15,7 +23,7 @@ const NameGroup: React.FC<IProps> = ({}) => {
           styles.name
         )}
       >
-        {data.name}
+        <Intl value={ownerDataQuery.data.title} />
       </h1>
 
       <div className="flex flex-col items-end w-fit max-w-full gap-2">
@@ -35,7 +43,7 @@ const NameGroup: React.FC<IProps> = ({}) => {
               styles.text_sub
             )}
           >
-            {data.subtitle}
+            <Intl value={ownerDataQuery.data.subtitle} />
           </h2>
         </div>
 
@@ -46,7 +54,7 @@ const NameGroup: React.FC<IProps> = ({}) => {
             styles.text_opacity
           )}
         >
-          {data.text}
+          <Intl value={ownerDataQuery.data.text} />
         </span>
       </div>
     </div>

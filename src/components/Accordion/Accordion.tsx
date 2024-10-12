@@ -5,8 +5,8 @@ import Icon from "../Icon/Icon";
 interface IProps {
   isOpen: boolean;
   onClick: () => void;
-  title: string;
-  text: string;
+  title: string | React.ReactNode;
+  text: string | React.ReactNode;
 }
 
 const Accordion: React.FC<IProps> = ({ isOpen, onClick, title, text }) => {
@@ -14,7 +14,7 @@ const Accordion: React.FC<IProps> = ({ isOpen, onClick, title, text }) => {
     <>
       <div
         className={classNames(
-          "flex flex-col justify-between items-center transition-all duration-500 px-6 py-4 w-[412px] border-[#EAEAEA] border-[1px] rounded-[15px] overflow-hidden cursor-pointer",
+          "flex flex-col justify-between items-center transition-all duration-500 px-6 py-4 border-[#EAEAEA] border-[1px] rounded-[15px] overflow-hidden cursor-pointer",
           "sm:w-full",
           {
             "h-[184px] bg-[#D2854D]": isOpen,

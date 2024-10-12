@@ -446,6 +446,10 @@ body {
     font-family: 'Halvar Breit';
 }
 
+.font-neue {
+    font-family: 'Neue Machina';
+}
+
 img {
     pointer-events: none;
     user-select: none;
