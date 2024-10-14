@@ -19,7 +19,7 @@ const ScreenBack: React.FC<React.PropsWithChildren<IProps>> = ({
                 </div>
             </div>
 
-            <div className="relative w-screen h-screen flex justify-center items-center pointer-events-auto z-10 sm:h-auto">
+            <div className="relative w-screen h-screen flex justify-center items-center pointer-events-auto z-10">
                 {children}
             </div>
         </div>
