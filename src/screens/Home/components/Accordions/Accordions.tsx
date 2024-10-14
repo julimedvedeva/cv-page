@@ -21,7 +21,7 @@ const Accordions: React.FC<IProps> = ({}) => {
 
   return (
     <div className={classnames("flex justify-between gap-6", styles.info)}>
-      <div className="flex flex-col gap-4 flex-1">
+      <div className="flex flex-col gap-4 flex-1 min-w-[440px] sm:min-w-[calc(100vw-64px)]">
         {infoQuery.data?.map((el, index) => (
           <Accordion
             key={index}

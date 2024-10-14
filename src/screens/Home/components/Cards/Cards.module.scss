@@ -32,11 +32,18 @@
         pointer-events: none;
         transition: linear all 0.1s;
     }
+
+    > * {
+        min-width: 440px !important;
+    }
 }
 
 @media screen and (max-width: 767px) {
     .cards {
+        scroll-snap-type: x mandatory;
+
         > * {
+            scroll-snap-align: center;
             min-width: calc(100vw - 64px) !important;
             max-width: calc(100vw - 64px)  !important;
         }
